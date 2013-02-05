@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Converting PNG files using TinyPNG.org (by Voormedia http://voormedia.com)";
+
+for i in *.png
+do
+	JSON=`curl http://tinypng.org/api/shrink --request POST --data-binary @$i 2>/dev/null  `; 
+
+	URL=${JSON/*url\":\"/};
+	URL=${URL/\"*/};
+
+	curl $URL>${i} 2>/dev/null
+	
+	echo "${i} updated.";
+done
+

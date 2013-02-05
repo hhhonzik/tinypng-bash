@@ -1,4 +1,13 @@
 tinypng-bash
 ============
 
-Bash script for TinyPNG.org automatic shrink.
+Bash script for shrinking PNG files of current directory.
+
+
+Usage
+------------
+
+`
+cd /web-project/images/
+tinypng
+`
